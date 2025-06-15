@@ -1,184 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="logo.png" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IIT-M BS degree-pyq</title>
-
+    <title>IIT-M BS degree - PYQ</title>
+    <link rel="icon" href="logo.png" type="image/x-icon" />
     <style>
-        body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: url('background.jpg');
-  font-family: Arial, sans-serif;
-}
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+      }
 
-/* Scroll Down Animation */
-.scroll-down {
-  position: absolute;
-  top: 80vh;
-  width: 100%;
-  text-align: center;
-  font-size: 34px;
-  color: #ff0000;
-  animation: bounce 2s infinite;
-  letter-spacing: 2px;
-  z-index: 999;
-}
+      .scroll-down {
+        position: absolute;
+        top: 80vh;
+        width: 100%;
+        text-align: center;
+        font-size: 34px;
+        color: #ff0000;
+        animation: bounce 2s infinite;
+        letter-spacing: 2px;
+        z-index: 999;
+      }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
 
-/* Hero Header */
-h1 {
-  margin: 0;
-  width: 100%;
-  height: 100vh;
-  line-height: 80vh;
-  text-align: center;
-  font-size: 60px;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
+      h1 {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url('bg.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-/* Main Grid */
-.view {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 2rem;
-  gap: 2rem;
-}
+      h1 img {
+        max-width: 80%;
+        max-height: 80%;
+        height: auto;
+        object-fit: contain;
+      }
 
-/* Common Block Styles */
-.block {
-  flex: 1 1 300px;
-  max-width: 100%;
-  height: 200px;
-  border: 0.5mm solid black;
-  border-radius: 7px;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 54px;
-  color: aliceblue;
-  text-align: center;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-}
+      .view {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2rem;
+        gap: 2rem;
+      }
 
-/* Override for wide blocks */
-.block.wide {
-  flex: 1 1 700px;
-}
+      .block {
+        flex: 1 1 300px;
+        max-width: 100%;
+        height: 200px;
+        border: 0.5mm solid black;
+        border-radius: 7px;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 54px;
+        color: aliceblue;
+        text-align: center;
+        cursor: pointer;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
 
-/* Individual Backgrounds */
-.block:nth-child(1), .block:nth-child(9), .block:nth-child(15), .block:nth-child(20) {
-  background: rgb(232, 88, 67);
-}
-.block:nth-child(2), .block:nth-child(6), .block:nth-child(11), .block:nth-child(18) {
-  background: rgb(26, 84, 207);
-}
-.block:nth-child(3), .block:nth-child(8), .block:nth-child(12), .block:nth-child(16) {
-  background: rgb(36, 217, 127);
-}
-.block:nth-child(4), .block:nth-child(7), .block:nth-child(13), .block:nth-child(17) {
-  background: rgb(157, 86, 247);
-}
-.block:nth-child(5), .block:nth-child(10), .block:nth-child(14), .block:nth-child(19) {
-  background: rgb(250, 201, 82);
-}
+      .block.wide {
+        flex: 1 1 700px;
+      }
 
-/* Add wide class where needed */
-.block:nth-child(8),
-.block:nth-child(10),
-.block:nth-child(16),
-.block:nth-child(20) {
-  flex: 1 1 700px;
-}
+      /* Individual Backgrounds */
+      .block:nth-child(1),
+      .block:nth-child(9),
+      .block:nth-child(15),
+      .block:nth-child(20) {
+        background: rgb(232, 88, 67);
+      }
 
-/* Animation for scroll-based reveal */
-@keyframes appear {
-  from {
-    opacity: 0;
-    clip-path: inset(100% 100% 0 0);
-  }
-  to {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-}
+      .block:nth-child(2),
+      .block:nth-child(6),
+      .block:nth-child(11),
+      .block:nth-child(18) {
+        background: rgb(26, 84, 207);
+      }
 
-/* ✅ Responsive Fixes */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-    line-height: normal;
-    padding-top: 5rem;
-  }
+      .block:nth-child(3),
+      .block:nth-child(8),
+      .block:nth-child(12),
+      .block:nth-child(16) {
+        background: rgb(36, 217, 127);
+      }
 
-  .block {
-    font-size: 1.5rem;
-    height: 160px;
-  }
+      .block:nth-child(4),
+      .block:nth-child(7),
+      .block:nth-child(13),
+      .block:nth-child(17) {
+        background: rgb(157, 86, 247);
+      }
 
-  .block.wide {
-    flex: 1 1 100%;
-  }
+      .block:nth-child(5),
+      .block:nth-child(10),
+      .block:nth-child(14),
+      .block:nth-child(19) {
+        background: rgb(250, 201, 82);
+      }
 
-  .scroll-down {
-    font-size: 24px;
-    top: 75vh;
-  }
-}
+      /* Wide block override */
+      .block:nth-child(8),
+      .block:nth-child(10),
+      .block:nth-child(16),
+      .block:nth-child(20) {
+        flex: 1 1 700px;
+      }
 
-@media (max-width: 480px) {
-  .block {
-    flex: 1 1 100%;
-    height: 140px;
-    font-size: 1.2rem;
-  }
-}
+      @keyframes appear {
+        from {
+          opacity: 0;
+          clip-path: inset(100% 100% 0 0);
+        }
+        to {
+          opacity: 1;
+          clip-path: inset(0 0 0 0);
+        }
+      }
 
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        h1 img {
+          max-width: 90%;
+          max-height: 60vh;
+        }
+
+        .block {
+          font-size: 1.5rem;
+          height: 160px;
+        }
+
+        .block.wide {
+          flex: 1 1 100%;
+        }
+
+        .scroll-down {
+          font-size: 24px;
+          top: 75vh;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .block {
+          flex: 1 1 100%;
+          height: 140px;
+          font-size: 1.2rem;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="scroll-down">▼ Scroll Down</div>
-    <h1><img src="logo.png" alt="IIT-MADRAS" style="vertical-align: middle; height: 500px"></h1>
-    
+
+    <h1>
+      <img src="logo.png" alt="IIT-MADRAS Logo" />
+    </h1>
+
     <div class="view">
-      <div onclick="window.location.href='Mathematics/Mindex.html'" style="cursor:pointer" class="block">Maths</div>
-      <div onclick="window.location.href='Statistics/Sindex.html'" style="cursor: pointer" class="block">Statistics</div>
-      <div onclick="window.location.href='CT/CTindex.html'" style="cursor: pointer" class="block">CT</div>
-      <div onclick="window.location.href='English/Eindex.html'" style="cursor: pointer" class="block">English</div>
+      <div onclick="window.location.href='Mathematics/Mindex.html'" class="block">Maths</div>
+      <div onclick="window.location.href='Statistics/Sindex.html'" class="block">Statistics</div>
+      <div onclick="window.location.href='CT/CTindex.html'" class="block">CT</div>
+      <div onclick="window.location.href='English/Eindex.html'" class="block">English</div>
+
+      <!-- Empty placeholders (can be removed or used later) -->
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block wide"></div>
+      <div class="block"></div>
+      <div class="block wide"></div>
       <div class="block"></div>
       <div class="block"></div>
       <div class="block"></div>
       <div class="block"></div>
       <div class="block"></div>
+      <div class="block wide"></div>
       <div class="block"></div>
       <div class="block"></div>
       <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
-      <div class="block"></div>
+      <div class="block wide"></div>
     </div>
   </body>
 </html>
