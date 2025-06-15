@@ -2,7 +2,7 @@ let questions = [
     {
         numb: 1,
         question: "Choose the correct option with respect to the points P(5,-3), Q(-3,3), R(0,-100), and S(-2.5,0) on the rectangular coordinate system.",
-        answer: "Point R does not lie in any quadrant.",
+        answer: "A. Point R does not lie in any quadrant.",
         options: [
             "A. Point R does not lie in any quadrant.",
             "B. Point P and R lie in quadrant III",
@@ -35,7 +35,7 @@ let questions = [
     {
         numb: 4,
         question: "The distance of a point lying on the X-coordinate from the origin is _______",
-        answer: "",
+        answer: "C. The value of the horizontal distance of that point from the origin",
         options: [
             "A. The value of the vertical distance of that point from the origin",
             "B. Cannot be determined",
