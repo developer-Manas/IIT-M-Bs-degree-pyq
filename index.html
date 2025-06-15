@@ -7,168 +7,151 @@
     <title>IIT-M BS degree-pyq</title>
 
     <style>
-        .scroll-down {
+        body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('background.jpg');
+  font-family: Arial, sans-serif;
+}
+
+/* Scroll Down Animation */
+.scroll-down {
   position: absolute;
   top: 80vh;
   width: 100%;
   text-align: center;
   font-size: 34px;
-  color: #ff0000 ;
+  color: #ff0000;
   animation: bounce 2s infinite;
-  font-family: Arial, sans-serif;
   letter-spacing: 2px;
   z-index: 999;
 }
 
-/* Bouncing animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Hero Header */
+h1 {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  line-height: 80vh;
+  text-align: center;
+  font-size: 60px;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Main Grid */
+.view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Common Block Styles */
+.block {
+  flex: 1 1 300px;
+  max-width: 100%;
+  height: 200px;
+  border: 0.5mm solid black;
+  border-radius: 7px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 54px;
+  color: aliceblue;
+  text-align: center;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+/* Override for wide blocks */
+.block.wide {
+  flex: 1 1 700px;
+}
+
+/* Individual Backgrounds */
+.block:nth-child(1), .block:nth-child(9), .block:nth-child(15), .block:nth-child(20) {
+  background: rgb(232, 88, 67);
+}
+.block:nth-child(2), .block:nth-child(6), .block:nth-child(11), .block:nth-child(18) {
+  background: rgb(26, 84, 207);
+}
+.block:nth-child(3), .block:nth-child(8), .block:nth-child(12), .block:nth-child(16) {
+  background: rgb(36, 217, 127);
+}
+.block:nth-child(4), .block:nth-child(7), .block:nth-child(13), .block:nth-child(17) {
+  background: rgb(157, 86, 247);
+}
+.block:nth-child(5), .block:nth-child(10), .block:nth-child(14), .block:nth-child(19) {
+  background: rgb(250, 201, 82);
+}
+
+/* Add wide class where needed */
+.block:nth-child(8),
+.block:nth-child(10),
+.block:nth-child(16),
+.block:nth-child(20) {
+  flex: 1 1 700px;
+}
+
+/* Animation for scroll-based reveal */
+@keyframes appear {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
   }
-  50% {
-    transform: translateY(10px);
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
   }
 }
 
-      body {
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        background-image: url('background.jpg');
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    line-height: normal;
+    padding-top: 5rem;
+  }
 
-        
-      }
-      h1 {
-        margin-top: 0px;
-        width: 100%;
-        height: 100vh;
-        line-height: 80vh;
-        text-align: center;
-        display: block;
-        font-size: 60px;
-        background-image: url('bg.jpg');
-        background-size: 100%;
-        
-      }
-      .view {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .block {
-        height: 200px;
-        width: 300px;
-        margin: 50px;
-        border: 0.5mm solid black;
-        border-radius: 7px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-      }
-      .block:nth-child(1) {
-        background: rgb(232, 88, 67);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-size: 54px;
-        color: aliceblue;
-        
-      }
-      .block:nth-child(2) {
-        background: rgb(26, 84, 207);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-size: 54px;
-        color: aliceblue;
-      }
-      .block:nth-child(3) {
-        background: rgb(36, 217, 127);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-size: 54px;
-        color: aliceblue;
-      }
-      .block:nth-child(4) {
-        background: rgb(157, 86, 247);
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-size: 54px;
-        color: aliceblue;
-      }
-      .block:nth-child(5) {
-        background: rgb(250, 201, 82);
-      }
-      .block:nth-child(6) {
-        background: rgb(26, 84, 207);
-      }
-      .block:nth-child(7) {
-        background: rgb(157, 86, 247);
-      }
-      .block:nth-child(8) {
-        background: rgb(36, 217, 127);
-        width: 700px;
-      }
-      .block:nth-child(9) {
-        background: rgb(232, 88, 67);
-      }
-      .block:nth-child(10) {
-        background: rgb(250, 201, 82);
-        width: 700px;
-      }
-      .block:nth-child(11) {
-        background: rgb(26, 84, 207);
-      }
-      .block:nth-child(12) {
-        background: rgb(36, 217, 127);
-      }
-      .block:nth-child(13) {
-        background: rgb(157, 86, 247);
-      }
-      .block:nth-child(14) {
-        background: rgb(250, 201, 82);
-      }
-      .block:nth-child(15) {
-        background: rgb(232, 88, 67);
-      }
-      .block:nth-child(16) {
-        background: rgb(36, 217, 127);
-        width: 700px;
-      }
-      .block:nth-child(17) {
-        background: rgb(157, 86, 247);
-      }
-      .block:nth-child(18) {
-        background: rgb(26, 84, 207);
-      }
-      .block:nth-child(19) {
-        background: rgb(250, 201, 82);
-      }
-      .block:nth-child(20) {
-        background: rgb(232, 88, 67);
-        width: 700px;
-      }
+  .block {
+    font-size: 1.5rem;
+    height: 160px;
+  }
 
-      @keyframes appear {
-        from {
-          opacity: 0;
-          clip-path: inset(100% 100% 0 0);
-        }
-        to {
-          opacity: 1;
-          clip-path: inset(0 0 0 0);
-        }
-      }
+  .block.wide {
+    flex: 1 1 100%;
+  }
 
-      .block {
-        animation: appear linear;
-        animation-timeline: view();
-        animation-range: entry 0% cover 40%;
-      }
+  .scroll-down {
+    font-size: 24px;
+    top: 75vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .block {
+    flex: 1 1 100%;
+    height: 140px;
+    font-size: 1.2rem;
+  }
+}
+
     </style>
   </head>
   <body>
